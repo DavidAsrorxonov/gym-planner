@@ -14,15 +14,23 @@ const Navbar = () => {
         </Link>
 
         <nav>
-          <>
-            <Link to={"auth/sign-in"}>
-              <Button>Sign in</Button>
-            </Link>
+          {user ? (
+            <>
+              <Link to={"/profile"}>
+                <Button>My Plan</Button>
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to={"/auth/sign-in"}>
+                <Button>Sign in</Button>
+              </Link>
 
-            <Link to={"auth/sign-up"}>
-              <Button variant={"secondary"}>Sign in</Button>
-            </Link>
-          </>
+              <Link to={"/auth/sign-up"}>
+                <Button variant={"secondary"}>Sign in</Button>
+              </Link>
+            </>
+          )}
         </nav>
       </div>
     </header>
