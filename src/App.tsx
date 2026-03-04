@@ -6,6 +6,7 @@ import Account from "./pages/Account";
 import Profile from "./pages/Profile";
 import Navbar from "./components/layout/navbar";
 import { NeonAuthUIProvider } from "@neondatabase/neon-js/auth/react";
+import "@neondatabase/neon-js/ui/css";
 import { authClient } from "./lib/auth";
 
 const App = () => {
