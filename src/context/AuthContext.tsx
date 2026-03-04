@@ -1,6 +1,6 @@
 import { authClient } from "@/lib/auth";
 import type { AuthContext } from "@/types/auth-context";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext<AuthContext | null>(null);
 
@@ -33,4 +33,12 @@ export default function AuthProvider({
       {children}
     </AuthContext.Provider>
   );
+}
+
+export function useAuth() {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return context;
 }
