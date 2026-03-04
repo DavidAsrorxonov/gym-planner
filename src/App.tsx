@@ -4,11 +4,13 @@ import Onboarding from "./pages/Onboarding";
 import Auth from "./pages/Auth";
 import Account from "./pages/Account";
 import Profile from "./pages/Profile";
+import Navbar from "./components/layout/navbar";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col">
+        <Navbar />
         <main className="flex-1">
           <Routes>
             <Route index element={<Home />} />
